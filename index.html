@@ -1,8 +1,24 @@
 <style>
+    html, body {
+    height: 100%;  
+    margin: 0;     
+    padding: 0;    
+    }
+
+    body > * {
+        margin-bottom: 0; 
+    }
     .home {
         background-color: #ffffff;
         text-align: center;
-        font-size: 50;
+        font-size: 80;
+        color: #000000;
+        scroll-margin-top: 60px;
+    }
+    .subhome {
+        background-color: #ffffff;
+        text-align: center;
+        font-size: 30;
         color: #000000;
         scroll-margin-top: 60px;
     }
@@ -54,12 +70,12 @@
         box-shadow: 0 15px 45px rgba(0,0,0,.1);
     }
     .navbar {
-            background-color: #4c4b4b;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+        background-color: #4c4b4b;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
         }
     .navbar a {
         float: left;
@@ -85,11 +101,12 @@
     height: 85%;
     }
     #authors {
-        background-color: #4c4b4b;
-        color: #ffffff;
+        background-color: #ffffff; 
+        color: #000000;
         text-align: center;
         padding: 20px;
         margin-top: 20px;
+        font-size: 18;
     }
     #authors ul {
         list-style-type: none; /* Removes the bullet points */
@@ -99,13 +116,85 @@
         margin: 10px 0;
     }
     #authors a {
-    color: white; /* Sets the text color of the links to white */
+    color: #000000; /* Sets the text color of the links to black */
     text-decoration: none; /* Optional: removes underline from links */
     }
 
     #authors a:hover {
-        color: #cccccc; /* Changes color on hover to light grey for better interaction visibility */
+        color: #ab1313;
     }
+    pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 1px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    font-size: 15;
+    }
+    code {
+        color: #c7254e;
+        background-color: #f9f2f4;
+    }
+    .code-container {
+    background-color: #282c34; 
+    color: #abb2bf;           
+    border-radius: 10px;      
+    padding: 20px;           
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    overflow-x: auto;         
+    }
+    .code-title {
+    color: #ffffff; 
+    margin-top: 0; 
+    margin-bottom: 10px; 
+    padding-left: 10px; 
+    text-align: center;
+    }
+    .key {
+        color: #e5c07b;           
+    }
+
+    .value {
+        color: #98c379;           
+    }
+
+    .comment {
+        color: #5c6370;          
+        font-style: italic;       
+    }
+
+    code {
+        display: block;          
+        white-space: pre-wrap;   
+        line-height: 1.5;        
+    }
+    footer {
+    background-color: #2c3e50; 
+    color: #ffffff; 
+    text-align: center; 
+    padding: 20px 10px; 
+    font-size: 16px; 
+    font-family: Arial, sans-serif; 
+    border-top: 3px solid #34495e; 
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    position: relative; 
+    bottom: 0; 
+    width: 100%;
+    }
+    .arrow {
+    cursor: pointer;
+    user-select: none;
+    padding-right: 5px;
+    transition: transform 0.3s ease;
+    display: inline-block; 
+    }
+
+    .arrow.open {
+        transform: rotate(90deg);
+    }
+
+
+
 </style>
 
 <!DOCTYPE html>
@@ -114,26 +203,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalTomo</title>
+    <link rel="icon" type="image/png" href="./images/logo.png">
 </head>
 
 <body>
         
     <div class="navbar">
-        <!-- <a href="#IPHYRE"><img src="images/logo.png" width = "80" height = "25"></a> -->
+        <a href="#"><img src="images/logo.png" width="30" height="30"></a>
         <a href="#Abstract">Abstract</a>
-        <a href="#Data">Data</a>
+        <a href="#Demo">Demo</a>
         <a href="https://github.com/lishiqianhugh/GlobalTomo">Code</a>
+        <a href="#Data">Data</a>
         <a href="#Results">Results</a>
-        <!-- <a href="https://pku.ai/">
-            <img src="images/core.png" width = "60" height = "25">
-        </a> -->
     </div>
 
     <div class="content"></div>
 
     <div class="home"  id="GlobalTomo">
-        <div><a style="font-size:30; color:#000000;"> GlobalTomo: A global dataset for <br>
-            physics-ML seismic wavefield modeling and FWI</a></div>
+        <div><a> <img src="images/logo.png" width="60" height="60"> GlobalTomo</a></div>
+    </div>
+    <div class="subhome"  id="GlobalTomo">
+        <div><a> A global dataset for physics-ML seismic wavefield modeling and FWI</a></div>
     </div>
 
     <section id="authors">
@@ -147,10 +237,10 @@
             <li>3 School of Engineering and Applied Science, Harvard University &nbsp &nbsp 4 NVIDIA &nbsp &nbsp 5 Rutherford Appleton Laboratory</li>
         </ul>
     </section>
-    
-    
-    <div class="content"></div>
 
+    <div class="title" id="">
+        <br>
+    </div>
     <div class="container">
     <div class="image">
         <img src="images/overview.jpg" title="overview" width="960" height="600">
@@ -168,22 +258,158 @@
         </div>
     </div>
 
+    <div class="title" id="Demo">
+        Demo
+    </div>
+
+    <div class="image">
+        <iframe src="https://player.vimeo.com/video/957588046" style="width: 80vw; height: 45vw; max-width: 75%; aspect-ratio: 16 / 9;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
     <div class="title" id="Data">
         Data
     </div>
     <div class="intro">
         <div class="main">
-            We present three data tier invloving different wave equation and training scales. To access the data, please click this <a href="https://forms.gle/wC1mLULDmoQYpugo8">link</a> and fill the request form.
+            We present three data tiers invloving different wave equation and training scales. To access the data, please fill the <a href="https://forms.gle/wC1mLULDmoQYpugo8">request form</a> below.
         </div>
     </div>
+    <div class="image">
+        <iframe src="https://forms.gle/wC1mLULDmoQYpugo8" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading</iframe>
+    </div>
+
+    <script>
+        function toggleVisibility(elementId, arrowElement) {
+            var element = document.getElementById(elementId);
+            if (element.style.display === 'none') {
+                element.style.display = 'block'; 
+                arrowElement.classList.add('open'); 
+            } else {
+                element.style.display = 'none'; 
+                arrowElement.classList.remove('open'); 
+            }
+        }
+        </script>
+
+    <div class="content"></div>
     
+    <div class="code-container">
+        <h3 class="code-title">
+            <span onclick="toggleVisibility('acoustic-data', this)" class="arrow">&#9654;</span> Acoustic Data Structure
+        </h3>
+        <div id="acoustic-data" style="display: none;">
+            <pre><code>
+                <span class="type">Acoustic wavefield:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(10000, 405)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'X'</span>: <span class="value">(10000, 15, 16, 3648)</span>, <span class="comment">// Spatial-temporal potential in wavefield</span>
+                <span class="key">'element_coords_cartesian'</span>: <span class="value">(16, 3648, 3)</span>, <span class="comment">// Cartesian coordinates of wavefield points</span>
+                <span class="key">'timestep'</span>: <span class="value">(15,)</span>, <span class="comment">// The propagation time of each snapshot</span>
+                }
+                <span class="type">Acoustic Fourier wavefield:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(10000, 405)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'X_coef'</span>: <span class="value">(10000, 15, 3648, 16)</span>, <span class="comment">// Spatial-temporal Fourier potential in wavefield</span>
+                <span class="key">'element_coords_sz'</span>: <span class="value">(3648, 2)</span>, <span class="comment">// Cartesian coordinates of wavefield points</span>
+                <span class="key">'timestep'</span>: <span class="value">(15,)</span>, <span class="comment">// The propagation time of each snapshot</span>
+                }
+                <span class="type">Acoustic seismogram:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(10000, 405)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'disp'</span>: <span class="value">(10000, 37, 37, 3, 150)</span>, <span class="comment">// Spatial-temporal displacement in seismograms</span>
+                <span class="key">'station_coords_cartesian'</span>: <span class="value">(37, 37, 3)</span>, <span class="comment">// Cartesian coordinates of seismogram stations</span>
+                <span class="key">'station_coords_spherical'</span>: <span class="value">(37, 37, 3)</span>, <span class="comment">// Spherical coordinates of seismogram stations</span>
+                <span class="key">'time'</span>: <span class="value">(150,)</span>, <span class="comment">// Time points of seismograms</span>
+                }
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="content"></div>
+
+    <div class="code-container">
+        <h3 class="code-title">
+            <span onclick="toggleVisibility('elastic-data', this)" class="arrow">&#9654;</span> Elastic Data Structure
+        </h3>
+        <div id="elastic-data" style="display: none;">
+            <pre><code>
+                <span class="type">Elastic wavefield:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(30000, 1215)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'disp'</span>: <span class="value">(30000, 15, 16, 3648, 3)</span>, <span class="comment">// Spatial-temporal displacement in wavefield</span>
+                <span class="key">'element_coords_cartesian'</span>: <span class="value">(16, 3648, 3)</span>, <span class="comment">// Cartesian coordinates of wavefield points</span>
+                <span class="key">'timestep'</span>: <span class="value">(15,)</span>, <span class="comment">// The propagation time of each snapshot</span>
+                }
+                <span class="type">Elastic Fourier wavefield:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(30000, 1215)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'disp_coef'</span>: <span class="value">(30000, 15, 3648, 16, 3)</span>, <span class="comment">// Spatial-temporal Fourier displacement in wavefield</span>
+                <span class="key">'element_coords_sz'</span>: <span class="value">(3648, 2)</span>, <span class="comment">// Cartesian coordinates of wavefield points</span>
+                <span class="key">'timestep'</span>: <span class="value">(15,)</span>, <span class="comment">// The propagation time of each snapshot</span>
+                }
+                <span class="type">Elastic seismogram:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(30000, 1215)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'disp'</span>: <span class="value">(30000, 37, 37, 3, 150)</span>, <span class="comment">// Spatial-temporal displacement in seismograms</span>
+                <span class="key">'station_coords_cartesian'</span>: <span class="value">(37, 37, 3)</span>, <span class="comment">// Cartesian coordinates of seismogram stations</span>
+                <span class="key">'station_coords_spherical'</span>: <span class="value">(37, 37, 3)</span>, <span class="comment">// Spherical coordinates of seismogram stations</span>
+                <span class="key">'time'</span>: <span class="value">(150,)</span>, <span class="comment">// Time points of seismograms</span>
+                }
+                <span class="type">Elastic source:</span>
+                {
+                <span class="key">'source'</span>: <span class="value">(30000, 6)</span>, <span class="comment">// Source parameters</span>
+                }
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="content"></div>
+
+    <div class="code-container">
+        <h3 class="code-title">
+            <span onclick="toggleVisibility('earth-data', this)" class="arrow">&#9654;</span> Real Earth Data Structure
+        </h3>
+        <div id="earth-data" style="display: none;">
+            <pre><code>
+                <span class="type">Real earth wavefield:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(10000, 5427)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'disp'</span>: <span class="value">(10000, 20, 16, 16470, 3)</span>, <span class="comment">// Spatial-temporal displacement in wavefield</span>
+                <span class="key">'element_coords_cartesian'</span>: <span class="value">(16, 16470, 3)</span>, <span class="comment">// Cartesian coordinates of wavefield points</span>
+                <span class="key">'timestep'</span>: <span class="value">(20,)</span>, <span class="comment">// The propagation time of each snapshot</span>
+                }
+                <span class="type">Real earth Fourier wavefield:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(10000, 5427)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'disp_coef'</span>: <span class="value">(10000, 20, 16470, 16, 3)</span>, <span class="comment">// Spatial-temporal Fourier displacement in wavefield</span>
+                <span class="key">'element_coords_sz'</span>: <span class="value">(16470, 2)</span>, <span class="comment">// Cartesian coordinates of wavefield points</span>
+                <span class="key">'timestep'</span>: <span class="value">(20,)</span>, <span class="comment">// The propagation time of each snapshot</span>
+                }
+                <span class="type">Real Earth seismogram:</span>
+                {
+                <span class="key">'harmonics'</span>: <span class="value">(10000, 5427)</span>, <span class="comment">// Velocity structure parameters</span>
+                <span class="key">'disp'</span>: <span class="value">(10000, 19, 37, 3, 6000)</span>, <span class="comment">// Spatial-temporal displacement in seismograms</span>
+                <span class="key">'station_coords_cartesian'</span>: <span class="value">(19, 37, 3)</span>, <span class="comment">// Cartesian coordinates of seismogram stations</span>
+                <span class="key">'station_coords_spherical'</span>: <span class="value">(19, 37, 3)</span>, <span class="comment">// Spherical coordinates of seismogram stations</span>
+                <span class="key">'time'</span>: <span class="value">(6000,)</span>, <span class="comment">// Time points of seismograms</span>
+                }
+                <span class="type">Real earth source:</span>
+                {
+                <span class="key">'source'</span>: <span class="value">(10000, 9)</span>, <span class="comment">// Source parameters</span>
+                }
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="content"></div>
+
     <div class="title" id="Results">
         Results
     </div>
 
     <div class="intro">
         <div class="main">
-            Forward modeling:
+            <strong>Forward modeling:</strong> given specific source and velocity structures, the goal is to predict the wavefield at various time steps and the resulting seismograms at surface stations.
         </div>
     </div>
     <div class="container">
@@ -193,7 +419,7 @@
     </div>
     <div class="intro">
         <div class="main">
-            Inversion:
+            <strong>Inversion:</strong> this process utilizes the seismograms as observational data to deduce the underlying velocity structures.
         </div>
     </div>
     <div class="container">
@@ -201,6 +427,7 @@
             <img src="images/inversion.jpg" title="overview" width="960" height="380">
         </div>
     </div>
+    <div class="content"></div>
     <footer>
         <p>© 2024 Project by GlobalTomo Team. All Rights Reserved.</p>
     </footer>
