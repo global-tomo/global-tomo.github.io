@@ -52,14 +52,36 @@
         justify-content: space-between;
         flex-wrap: wrap;
         padding: 10px 200px;
+        margin: 0 auto;
+        max-width: 90%;
+        box-sizing: border-box; 
    }
    .image {
+        flex: 1 1 auto;
         display: flex;
         justify-content: center;
         width: 100%;
+        max-width: 100%;
         height: auto;
         object-fit: cover;
         text-align: center;
+        
+    }
+    .image img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .image-container img {
+        border: 2px solid black;
     }
     .box {
         /* position: relative; */
@@ -243,7 +265,7 @@
     </div>
     <div class="container">
     <div class="image">
-        <img src="images/overview.jpg" title="overview" width="960" height="600">
+        <img src="images/overview.jpg" title="overview">
     </div>
     </div>
 
@@ -269,14 +291,6 @@
     <div class="title" id="Data">
         Data
     </div>
-    <div class="intro">
-        <div class="main">
-            We present three data tiers invloving different wave equation and training scales. To access the data, please fill the <a href="https://forms.gle/wC1mLULDmoQYpugo8">request form</a> below.
-        </div>
-    </div>
-    <div class="image">
-        <iframe src="https://forms.gle/wC1mLULDmoQYpugo8" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading</iframe>
-    </div>
 
     <script>
         function toggleVisibility(elementId, arrowElement) {
@@ -290,6 +304,24 @@
             }
         }
         </script>
+
+    <div class="container">
+        <div class="image">
+            <div class="image-container">
+                <p>Acoustic</p>
+                <img src="images/acoustic.gif" title="acoustic">
+            </div>
+            <div class="image-container">
+                <p>Elastic</p>
+                <img src="images/elastic.gif" title="elastic">
+            </div>
+            <div class="image-container">
+                <p>Real Earth</p>
+                <img src="images/earth.gif" title="earth">
+            </div>
+        </div>
+    </div>
+
 
     <div class="content"></div>
     
@@ -401,6 +433,15 @@
         </div>
     </div>
 
+    <div class="intro">
+        <div class="main">
+            We present three data tiers invloving different wave equation and training scales. To access the data, please fill the <a href="https://forms.gle/wC1mLULDmoQYpugo8">request form</a> below.
+        </div>
+    </div>
+    <div class="image">
+        <iframe src="https://forms.gle/wC1mLULDmoQYpugo8" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading</iframe>
+    </div>
+
     <div class="content"></div>
 
     <div class="title" id="Results">
@@ -414,7 +455,7 @@
     </div>
     <div class="container">
         <div class="image">
-            <img src="images/forward.jpg" title="overview" width="960" height="500">
+            <img src="images/forward.jpg">
         </div>
     </div>
     <div class="intro">
@@ -424,7 +465,7 @@
     </div>
     <div class="container">
         <div class="image">
-            <img src="images/inversion.jpg" title="overview" width="960" height="380">
+            <img src="images/inversion.jpg">
         </div>
     </div>
     <div class="content"></div>
